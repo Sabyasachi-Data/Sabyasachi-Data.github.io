@@ -33,6 +33,9 @@
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } }
     </style>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav class="navbar">
@@ -128,6 +131,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+
     <script>
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -152,6 +157,17 @@
             if (window.location.hash === '#thank-you') {
                 document.getElementById('thank-you').scrollIntoView({ behavior: 'smooth' });
         }
+
+            async function loadMarkdown(mdPath, targetSelector) {
+            const res = await fetch(mdPath);
+            const md = await res.text();
+            document.querySelector(targetSelector).innerHTML = marked.parse(md);
+        }
+
+            loadMarkdown('content/thesis.md', '#thesis-content');
+            loadMarkdown('content/publications.md', '#publications-content');
+            loadMarkdown('content/projects.md', '#projects-content');
+
 
     </script>
     
