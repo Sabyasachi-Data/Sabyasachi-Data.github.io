@@ -1,0 +1,44 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* DARK MODE OVERRIDE */
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+.page-header {
+  background-color: #161b22;
+  background-image: none;
+}
+
+a {
+  color: #58a6ff;
+}
+
+a:hover {
+  color: #79c0ff;
+}
+
+.project-tagline {
+  color: #8b949e;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4 {
+  color: #ffffff;
+}
+
+.main-content {
+  background-color: #0d1117;
+}
+
+.site-footer {
+  background-color: #161b22;
+  color: #8b949e;
+}
