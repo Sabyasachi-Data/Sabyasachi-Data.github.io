@@ -1,44 +1,34 @@
 ---
 ---
 
+// 1. Define your dark mode colors here (these override Cayman's defaults)
+$header-heading-color: #ffffff;
+$header-bg-color: #0d1117; // Dark GitHub style background
+$header-bg-color-secondary: #161b22;
+$section-headings-color: #c9d1d9;
+$body-text-color: #8b949e;
+$body-bg-color: #010409;
+$body-link-color: #58a6ff;
+$blockquote-text-color: #8b949e;
+
+// 2. Import the Cayman theme AFTER defining the variables
 @import "{{ site.theme }}";
 
-/* DARK MODE OVERRIDE */
+// 3. (Optional) Fix up any remaining contrast issues using standard CSS
+table th, table td {
+  border-color: #30363d;
+}
 
-body {
-  background-color: #0d1117;
+table th {
+  background-color: #161b22;
+}
+
+code {
+  background-color: rgba(110, 118, 129, 0.4);
   color: #c9d1d9;
 }
 
 .page-header {
-  background-color: #161b22;
-  background-image: none;
-}
-
-a {
-  color: #58a6ff;
-}
-
-a:hover {
-  color: #79c0ff;
-}
-
-.project-tagline {
-  color: #8b949e;
-}
-
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content h4 {
-  color: #ffffff;
-}
-
-.main-content {
-  background-color: #0d1117;
-}
-
-.site-footer {
-  background-color: #161b22;
-  color: #8b949e;
+  // Overrides the default Cayman gradient to make it completely dark
+  background-image: linear-gradient(120deg, $header-bg-color, $header-bg-color-secondary);
 }
